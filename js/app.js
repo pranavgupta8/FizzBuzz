@@ -18,17 +18,26 @@ $(document).ready(function(){
 		i++;
 	}*/
 
-	var substi = new Array('', 'Fizz', 'Buzz', 'FizzBuzz');
-	var i = 1;
+	function theFizzBuzz(num){
+	
+		var substi = new Array('', 'Fizz', 'Buzz', 'FizzBuzz');
+		var i=1;
 
-	while(i<=100) {
+		while(i<=num) {
 		
-		var n = (1 * (i%3===0 ? 1 : 0)) + (2 * (i%5===0 ? 1 : 0));
+			var n = (1 * (i%3===0 ? 1 : 0)) + (2 * (i%5===0 ? 1 : 0));
 		
-		if (n==0) {substi.splice(0, 1, i);}
+			if (n==0) {substi.splice(0, 1, i);}
 		
-		$('.content').append('<h3>' + substi[n] + '</h3>');
+			$('.content').append('<h3>' + substi[n] + '</h3>');
 		
-		i++;
-	}
+			i++;
+		}
+	};
+
+	var numStr = prompt("Enter a Number ?");
+	var numNum = parseInt(numStr);
+
+	theFizzBuzz(numNum);	
+	
 });
